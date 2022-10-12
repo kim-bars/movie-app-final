@@ -50,7 +50,7 @@ async function renderMovies() {
                 </div>
           </div>
           `
-        
+
 
         html += htmlSegment;
     });
@@ -155,18 +155,18 @@ $("#search-movies").keyup(function (e){
 
 
 //getting the information from the user
- function moviesInput(userInput) {
- console.log(userInput)
-     let movies;
+function moviesInput(userInput) {
+    console.log(userInput)
+    let movies;
     // try {
     //  await
-     fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TBMI_API}&language=en-US&query=${userInput}&page=1&include_adult=false`).then(res => res.json()).then(data => {
-         let x = gettingIds(data);
-         let movies = displayonmodule(x);
-     })
-        // return await res.json();
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TBMI_API}&language=en-US&query=${userInput}&page=1&include_adult=false`).then(res => res.json()).then(data => {
+        let x = gettingIds(data);
+        let movies = displayonmodule(x);
+    })
+    // return await res.json();
     console.log(movies);
-     // }
+    // }
     // catch (error) {
     //     console.log(error);
     // }
@@ -178,14 +178,14 @@ $("#search-movies").keyup(function (e){
 function gettingIds(movieData) {
     let movieResults = movieData;
 
-        console.log(movieResults)
-        let y = [];
-        let z ='';
-        for (let i = 0; i < 5; i++) {
-           y.push(movieResults.results[i]);
-        }
-        console.log(y)
-        return y;
+    console.log(movieResults)
+    let y = [];
+    let z ='';
+    for (let i = 0; i < 5; i++) {
+        y.push(movieResults.results[i]);
+    }
+    console.log(y)
+    return y;
 
 }
 
@@ -262,9 +262,3 @@ $(document).on('click', ".click-btn", function(e) {
 
 
 })
-
-
-
-
-
-
